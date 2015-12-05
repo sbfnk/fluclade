@@ -115,8 +115,8 @@ for (i in seq_len(N))
     freq <- max(0, min(1, freq + rnorm(1, sd = sigma) + mu))
 }
 
-## take the smallest power of 2 < (2 * N) as number of particles
-nparticles <- 2 * 2 ** ceiling(log(N, base = 2))
+## take four times the smallest power of 2 < (2 * N) as number of particles
+nparticles <- 4 * 2 ** ceiling(log(N, base = 2))
 
 ## run libbi
 options <- list(noutputs = length(dp) - 1,
