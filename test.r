@@ -12,7 +12,7 @@ library('docopt')
 Usage: test_clades.r [options]
 Options:
 -s --sigma=<sigma>                  Volatility (default: random number [0, 0.05])
--m --mu=<mu>                        Drift (default: random number [-0.05, 0.05])
+-m --mu=<mu>                        Drift (default: random number [-0.01, 0.01])
 -i --init=<init>                    Initial frequency (default: random number [0.3, 0.7])
 -N --ndata=<ndata>                  Number of data points to generate (default: 20)
 -n --nsamples                       Number of samples to generate (default: 1)
@@ -43,7 +43,7 @@ if ("mu" %in% opts)
     mu <- as.numeric(opts[["mu"]])
 } else
 {
-    mu <- runif(1, min = -0.05, max = 0.05)
+    mu <- runif(1, min = -0.01, max = 0.01)
 }
 
 if ("init" %in% opts)
