@@ -147,7 +147,7 @@ write.table(state_samples, paste0(output_file_base, "_state_samples.csv"), sep =
 
 setnames(rdt$sigma, "value", "sigma")
 setnames(rdt$mu, "value", "mu")
-setnames(initFreq, "value", "initFreq")
+setnames(initFreq, "value", "init")
 
 parameter_samples <- merge(rdt$sigma, rdt$mu, by = c("np"))
 parameter_samples <- merge(parameter_samples, initFreq, by = c("np"))
@@ -155,16 +155,16 @@ setnames(parameter_samples, "np", "iteration")
 write.table(parameter_samples, paste0(output_file_base, "_param_samples.csv"), sep = ",",
             quote = FALSE, row.names = FALSE)
 
-params <- data.table(name = c("sigma", "mu", "initFreq"),
+params <- data.table(name = c("sigma", "mu", "init"),
                     values = c(sigma, mu, freqs[1]))
 write.table(params, paste0(output_file_base, "_params.csv"), sep = ",",
             quote = FALSE, row.names = FALSE)
 
-data <- data.table(time = seq_along(freqs) - 1, freq = freqs, data = dp)
-write.table(data, paste0(output_file_base, "_data.csv"), sep = ",",
+sim_data <- data.table(time = seq_along(freqs) - 1, freq = freqs, data = dp)
+write.table(sim_data, paste0(output_file_base, "_data.csv"), sep = ",",
             quote = FALSE, row.names = FALSE)
 
-p <- plot_libbi(res, trend = "mean", data = data[, list(time, value = freq)])
+p <- plot_libbi(res, trend = "mean", data = sim_data[, list(time, value = freq)])
 plot <- p$states +
-    geom_point(data = data, aes(x = time, y = data), color = "black", shape = 4)
+    geom_point(data = sim_data, aes(x = time, y = data), color = "black", shape = 4)
 save_plot(paste0(output_file_base, ".pdf"), plot)
