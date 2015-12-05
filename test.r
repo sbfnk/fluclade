@@ -95,6 +95,7 @@ dir.create(work_dir)
 
 library('RBi')
 library('RBi.helpers')
+library('cowplot')
 
 message("Generating data")
 message("  Initial frequency: ", round(freq, 2))
