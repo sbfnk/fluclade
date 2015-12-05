@@ -131,7 +131,7 @@ bi_wrapper <- libbi(client = "sample",
                     global_options = options,
                     working_folder = work_dir)
 
-bi_wrapper$run(obs = list(zo = dp))
+bi_wrapper$run(obs = list(zo = dp), verbose = opts[["verbose"]])
 
 ## analyse results
 res <- bi_read(bi_wrapper)
