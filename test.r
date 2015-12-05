@@ -105,7 +105,7 @@ message("")
 
 ## generate data points
 dp <- c()
-freqs <- c(c)
+freqs <- c()
 for (i in seq_len(N))
 {
     freqs <- c(freqs, freq)
