@@ -68,7 +68,7 @@ if ("nsamples" %in% opts)
     nsamples <- as.integer(opts[["nsamples"]])
 } else
 {
-    nsamples <- 1
+    nsamples <- 10000
 }
 
 if ("output-file" %in% opts)
