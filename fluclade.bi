@@ -19,11 +19,10 @@ model fluclade {
   sub parameter {
     sigma ~ uniform(0, 1)
     mu ~ uniform(0, 1)
-    initFreq ~ uniform(0, 1)
   }
 
   sub initial {
-    Freq <- initFreq
+    Freq ~ uniform(0, 1)
   }
 
   sub observation {
