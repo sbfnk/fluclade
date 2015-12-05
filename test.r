@@ -15,7 +15,7 @@ Options:
 -m --mu=<mu>                        Drift (default: random number [-0.01, 0.01])
 -i --init=<init>                    Initial frequency (default: random number [0.3, 0.7])
 -N --ndata=<ndata>                  Number of data points to generate (default: 20)
--n --nsamples                       Number of samples to generate (default: 1)
+-n --nsamples                       Number of samples to generate (default: 10000)
 -d --seed=<seed>                    Random seed
 -o --output-file=<output.file>      Output file base (default: 'freq'); suffixes will be attached
 -w --working-directory=<work.dir>   Working directory (default: './libbi')
