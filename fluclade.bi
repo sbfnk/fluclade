@@ -3,8 +3,6 @@ model fluclade {
   param sigma
   param mu
 
-  param initFreq
-  
   state Freq
 
   noise n_freq
@@ -17,15 +15,24 @@ model fluclade {
   }
   
   sub parameter {
-    sigma ~ uniform(0, 1)
-    mu ~ uniform(0, 1)
+    sigma ~ uniform()
+    mu ~ uniform()
+  }
+
+  sub proposal_parameter {
+    sigma ~ truncated_gaussian(mean = sigma, std = 0.05, lower = 0, upper = 1)
+    mu ~ truncated_gaussian(mean = sigma, std = 0.05, lower = 0, upper = 1)
+  }
+
+  sub proposal_initial {
+    Freq ~ truncated_gaussian(mean = Freq, std = 0.05, lower = 0, upper = 1)
   }
 
   sub initial {
-    Freq ~ uniform(0, 1)
+    Freq ~ uniform()
   }
 
   sub observation {
-    zo ~ Freq**zo * (1-Freq) ** (1 - zo)
+    zo ~ (Freq ** zo) * ((1-Freq) ** (1 - zo))
   }
 }
