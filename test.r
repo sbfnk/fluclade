@@ -19,6 +19,7 @@ Options:
 -d --seed=<seed>                    Random seed
 -o --output-file=<output.file>      Output file base (default: 'freq'); suffixes will be attached
 -w --working-directory=<work.dir>   Working directory (default: './libbi')
+-v --verbose                        Verbose output
 -h --help                           show this message" -> doc
 
 ## read arguments
