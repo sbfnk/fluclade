@@ -118,7 +118,7 @@ for (i in seq_len(N))
 ## take (smallest power of 2) < (2 * N) as number of particles
 nparticles <- 2 ** ceiling(log(N, base = 2))
 
-## run libbi
+## assign options
 options <- list(noutputs = length(dp) - 1,
                 "start-time" = 0,
                 "end-time" = length(dp) - 1,
@@ -126,11 +126,13 @@ options <- list(noutputs = length(dp) - 1,
                 nsamples = nsamples,
                 seed = runif(1, max = .Machine$integer.max))
 
+## create libbi object
 bi_wrapper <- libbi(client = "sample",
-                    model_file_name = "fluclade.bi",
+                    model_file_name = "fluclade.bi", 
                     global_options = options,
                     working_folder = work_dir)
 
+## run model
 bi_wrapper$run(obs = list(zo = dp), verbose = opts[["verbose"]])
 
 ## analyse results
