@@ -11,7 +11,7 @@ model fluclade {
   
   sub transition {
     n_freq ~ wiener()
-    Freq <- max(0, min(1, Freq + sigma * n_freq + mu))
+    Freq <- max(0.01, min(0.99, Freq + sigma * n_freq + mu))
   }
   
   sub parameter {
