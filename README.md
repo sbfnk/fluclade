@@ -10,7 +10,7 @@ Rscript fluclade.r -h
 
 ## Requirements
 
-It needs [libbi](http://libbi.org/), and the [RBi](https://github.com/sbfnk/RBi), [RBi.helpers](https://github.com/sbfnk/RBi.helpers), [docopt](https://cran.r-project.org/web/packages/docopt/index.html), [cowplot](https://cran.r-project.org/web/packages/cowplot/index.html) and [data.table](https://cran.r-project.org/web/packages/data.table/index.html) packages:
+It needs [libbi](http://libbi.org/), and the [RBi](https://github.com/sbfnk/RBi), [RBi.helpers](https://github.com/sbfnk/RBi.helpers), [docopt](https://cran.r-project.org/web/packages/docopt/index.html), [cowplot](https://cran.r-project.org/web/packages/cowplot/index.html) and [data.table](https://cran.r-project.org/web/packages/data.table/index.html) R packages:
 
 ```[r]
 install.packages('devtools')
