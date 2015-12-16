@@ -31,7 +31,7 @@ if (opts[["help"]])
     exit()
 }
 
-if ("sigma" %in% opts)
+if ("sigma" %in% names(opts))
 {
     sigma <- as.numeric(opts[["sigma"]])
 } else
@@ -39,7 +39,7 @@ if ("sigma" %in% opts)
     sigma <- runif(1, min = 0, max = 0.05)
 }
 
-if ("mu" %in% opts)
+if ("mu" %in% names(opts))
 {
     mu <- as.numeric(opts[["mu"]])
 } else
@@ -47,7 +47,7 @@ if ("mu" %in% opts)
     mu <- runif(1, min = -0.01, max = 0.01)
 }
 
-if ("init" %in% opts)
+if ("init" %in% names(opts))
 {
     freq <- as.numeric(opts[["init"]])
 } else
@@ -55,7 +55,7 @@ if ("init" %in% opts)
     freq <- runif(1, min = 0.3, max = 0.7)
 }
 
-if ("ndata" %in% opts)
+if ("ndata" %in% names(opts))
 {
     N <- as.integer(opts[["ndata"]])
 } else
@@ -63,7 +63,7 @@ if ("ndata" %in% opts)
     N <- 20
 }
 
-if ("nsamples" %in% opts)
+if ("nsamples" %in% names(opts))
 {
     nsamples <- as.integer(opts[["nsamples"]])
 } else
@@ -71,7 +71,7 @@ if ("nsamples" %in% opts)
     nsamples <- 10000
 }
 
-if ("output-file" %in% opts)
+if ("output-file" %in% names(opts))
 {
     output_file_base <- opts[["output-file"]]
 } else
@@ -79,7 +79,7 @@ if ("output-file" %in% opts)
     output_file_base <- "freq"
 }
     
-if ("working-directory" %in% opts)
+if ("working-directory" %in% names(opts))
 {
     work_dir <- opts[["working-directory"]]
 } else
@@ -87,7 +87,7 @@ if ("working-directory" %in% opts)
     work_dir <- "libbi"
 }
 
-if ("seed" %in% opts) set.seed(opts[["seed"]])
+if ("seed" %in% names(opts)) set.seed(opts[["seed"]])
 
 suppressWarnings(dir.create(work_dir))
 unlink(work_dir, recursive = TRUE)
