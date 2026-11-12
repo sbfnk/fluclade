@@ -1,5 +1,7 @@
 # fluclade
 
+> **Archived.** No longer maintained; last updated December 2015.
+
 Flu clade frequency model implemented in [libbi](http://libbi.org/).
 
 To test, run
